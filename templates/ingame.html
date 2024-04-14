@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인게임</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/bootstrap-5.3.3-dist/css/bootstrap.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="problem">
+        <h4>문제</h4>
+        <h1>123 + 456 = ?</h1>
+        <h2>3</h2>
+      </div>
+      <div id="webcam"></div>
+    </div>
+  </body>
+  <script src="../static/jquery-3.7.1.min.js"></script>
+  <script src="../static/script.js"></script>
+  <script>
+    createProblem();
+    setInterval(() => {
+      updatePoseImg();
+    }, 100);
+    setInterval(() => {
+      saveImage();
+    }, 1000);
+  </script>
+</html>
